@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*CowpokeChili.cs
+ * Author: Nathan Bean
+ */
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data

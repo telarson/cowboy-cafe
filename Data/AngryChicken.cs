@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*AngryChicken.cs
+ * Author: Tristan Larson
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

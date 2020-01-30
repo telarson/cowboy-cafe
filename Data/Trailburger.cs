@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*Trailburger.cs
+ * Author: Tristan Larson
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
