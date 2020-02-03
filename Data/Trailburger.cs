@@ -10,7 +10,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Class representation of the Trailburger entree
     /// </summary>
-    public class Trailburger
+    public class Trailburger : Entree
     {
         /// <summary>
         /// Price for the Trailburger entree

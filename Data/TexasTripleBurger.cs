@@ -10,7 +10,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Class representing the TexasTripleBurger
     /// </summary>
-    public class TexasTripleBurger
+    public class TexasTripleBurger : Entree
     {
         /// <summary>
         /// Price of the TexasTripleBurger
