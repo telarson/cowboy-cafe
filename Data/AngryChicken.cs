@@ -15,7 +15,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of an Angry Chicken
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -26,7 +26,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The caloric content of the Angry Chicken
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -59,7 +59,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// List to store special instructions for the Angry Chicken
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
