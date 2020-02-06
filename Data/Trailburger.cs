@@ -10,17 +10,17 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Class representation of the Trailburger entree
     /// </summary>
-    public class Trailburger : Entree
+    public class TrailBurger : Entree
     {
         /// <summary>
         /// Price for the Trailburger entree
         /// </summary>
-        public double Price { get; } = 4.50;
+        public override double Price { get; } = 4.50;
 
         /// <summary>
         /// Calorie content for the Trailburger entree
         /// </summary>
-        public uint Calories { get; } = 288;
+        public override uint Calories { get; } = 288;
 
         /// <summary>
         /// Boolean flag for a Bun on the Trailburger
@@ -50,7 +50,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the Trailburger
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

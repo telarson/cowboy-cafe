@@ -15,12 +15,12 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Price for the Pecos Pulled Pork entree
         /// </summary>
-        public double Price { get; } = 5.88;
+        public override double Price { get; } = 5.88;
 
         /// <summary>
         /// Calorie content for the Pecos Pulled Pork entree
         /// </summary>
-        public uint Calories { get; } = 528;
+        public override uint Calories { get; } = 528;
 
         /// <summary>
         /// Boolean flag for Bread on the Pecos Pulled Pork entree
@@ -35,7 +35,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the Pecos Pulled Pork entree
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

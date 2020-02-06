@@ -15,12 +15,12 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Price of the DakotaDoubleBurger
         /// </summary>
-        public double Price { get; } = 5.20;
+        public override double Price { get; } = 5.20;
 
         /// <summary>
         /// Calorie content of the DakotaDoubleBurger
         /// </summary>
-        public uint Calories { get; } = 464;
+        public override uint Calories { get; } = 464;
 
         /// <summary>
         /// Boolean flag for a Bun on the DakotaDoubleBurger
@@ -65,7 +65,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the DakotaDoubleBurger
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

@@ -15,12 +15,12 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Price of the TexasTripleBurger
         /// </summary>
-        public double Price { get; } = 6.45;
+        public override double Price { get; } = 6.45;
 
         /// <summary>
         /// Calorie content of the TexasTripleBurger
         /// </summary>
-        public uint Calories { get; } = 698;
+        public override uint Calories { get; } = 698;
 
         /// <summary>
         /// Boolean flag for a Bun on the TexasTripleBurger
@@ -75,7 +75,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the TexasTripleBurger
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
