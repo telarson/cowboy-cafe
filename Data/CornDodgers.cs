@@ -1,6 +1,6 @@
-﻿/* PanDeCampo.cs
+﻿/* CornDogers.cs
  * Author: Tristan Larson
- * Class for the Pan de Campo side.
+ * Class for a side of Corn Dogers.
  */
 using System;
 using System.Collections.Generic;
@@ -9,9 +9,9 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Represents a side of Pan de Campo
+    /// Represents a side of Corn dogers.
     /// </summary>
-    public class PanDeCampo : Side
+    public class CornDodgers : Side
     {
 
         /// <summary>
@@ -24,11 +24,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Small:
-                        return 227;
+                        return 512;
                     case Size.Medium:
-                        return 269;
+                        return 685;
                     case Size.Large:
-                        return 367;
+                        return 717;
                     default:
                         throw new NotImplementedException();
                 }
