@@ -9,8 +9,14 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// Class Representing the Chili Cheese Fries entree
+    /// </summary>
     public class ChiliCheeseFries : Side
     {
+        /// <summary>
+        /// Property that returns the calories of the side based on it's size
+        /// </summary>
         public override uint Calories
         {
             get
@@ -29,6 +35,9 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Property that returns the Price of the side based on it's size
+        /// </summary>
         public override double Price
         {
             get
