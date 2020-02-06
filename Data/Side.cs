@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*Side.cs
+ * Author: Nathan Bean
+ * Base class representing a side that includes
+ * Size, Price, and Calories
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 

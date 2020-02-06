@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*ChiliCheeseFries.cs
+ * Author: Tristan Larson
+ * Class for the Chili Cheese Fries side, inherits from
+ * the Side base class.
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 
