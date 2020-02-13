@@ -34,22 +34,10 @@ namespace CowboyCafe.Data
             }
         }
 
-        private bool bread = true;
         /// <summary>
         /// Bool representing if the Angry Chicken should include bread
         /// </summary>
-        public bool Bread
-        {
-            get
-            {
-                return bread;
-            }
-
-            set
-            {
-                bread = value;
-            }
-        }
+        public bool Bread { get; set; } = true;
 
         /// <summary>
         /// Bool representing if pickle is included with the Angry Chicken
