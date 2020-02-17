@@ -6,6 +6,12 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="50px"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -15,8 +21,12 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
             <TextBlock TextAlignment="Center">Entrees</TextBlock>
-            <Button Name="AddCowpokeChiliButton" Content="Cowpoke Chili"/>
-            <Button Name="AddRustlersRibsButton" Content="Rustler's Ribs"/>
+            <Button x:Name="AddCowpokeChiliButton" Content="Cowpoke Chili"/>
+            <Button x:Name="AddRustlersRibsButton" Content="Rustler's Ribs"/>
+            <Button x:Name="AddPecosPulledPorkButton" Content="Pecos Pulled Pork"/>
+            <Button x:Name="AddTrailBurgerButton" Content="Trail Burger" />
+            <Button x:Name="AddDakotaDoubleBurgerButton" Content="Dakota Double Burger"/>
+            <Button x:Name="AddTexasTripleBurgerButton" Content="Texas Triple Burger"/>
         </StackPanel>
         <StackPanel Grid.Column="1">
             <TextBlock TextAlignment="Center">Sides</TextBlock>
