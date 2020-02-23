@@ -47,5 +47,14 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// ToString Override to print the items attributes. 
+        /// </summary>
+        /// <returns>The item size and name.</returns>
+        public override string ToString()
+        {
+            return $"{Size} Water";
+        }
     }
 }

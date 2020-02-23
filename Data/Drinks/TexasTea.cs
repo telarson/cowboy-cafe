@@ -98,5 +98,19 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// ToString Override to print the items attributes. 
+        /// </summary>
+        /// <returns>The item size, sweet type, and name.</returns>
+        public override string ToString()
+        {
+            string item;
+
+            if(Sweet) { item = $"{Size} Texas Sweet Tea"; }
+            else { item = $"{Size} Texas Plain Tea"; }
+
+            return item;
+        }
     }
 }

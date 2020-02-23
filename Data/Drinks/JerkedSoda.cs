@@ -72,5 +72,34 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// ToString Override to print the items attributes. 
+        /// </summary>
+        /// <returns>The item size, flavor, and name.</returns>
+        public override string ToString()
+        {
+            string item = "";
+
+            switch (Flavor)
+            {
+                case SodaFlavor.BirchBeer:
+                    item = $"{Size} Birch Beer Jerked Soda";
+                    break;
+                case SodaFlavor.CreamSoda:
+                    item = $"{Size} Cream Soda Jerked Soda";
+                    break;
+                case SodaFlavor.OrangeSoda:
+                    item = $"{Size} Orange Soda Jerked Soda";
+                    break;
+                case SodaFlavor.RootBeer:
+                    item = $"{Size} Root Beer Jerked Soda";
+                    break;
+                case SodaFlavor.Sarsparilla:
+                    item = $"{Size} Sarsparilla Jerked Soda";
+                    break;
+            }
+            return item;
+        }
     }
 }
