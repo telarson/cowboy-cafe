@@ -55,5 +55,14 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Returns the side size and name.
+        /// </summary>
+        /// <returns>{Size} Pan De Campos</returns>
+        public override string ToString()
+        {
+            return $"{Size} Pan de Campo";
+        }
     }
 }

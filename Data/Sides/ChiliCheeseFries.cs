@@ -55,5 +55,14 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Returns the side size and name.
+        /// </summary>
+        /// <returns>{Size} Chili Cheese Fries</returns>
+        public override string ToString()
+        {
+            return $"{Size} Chili Cheese Fries";
+        }
     }
 }

@@ -54,5 +54,14 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Returns the side size and name.
+        /// </summary>
+        /// <returns>{Size} Baked Beans</returns>
+        public override string ToString()
+        {
+            return $"{Size} Baked Beans";
+        }
     }
 }
