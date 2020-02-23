@@ -73,9 +73,9 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Returns the Cowpoke Chili name.
+        /// Returns the Entree name.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Cowpoke Chili</returns>
         public override string ToString()
         {
 

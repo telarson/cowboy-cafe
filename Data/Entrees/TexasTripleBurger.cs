@@ -96,6 +96,16 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Returns the Entree name.
+        /// </summary>
+        /// <returns>Texas Triple Burger</returns>
+        public override string ToString()
+        {
+
+            return "Texas Triple Burger";
+        }
+
 
     }
 }
