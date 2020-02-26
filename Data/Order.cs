@@ -13,7 +13,7 @@ namespace CowboyCafe.Data
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private uint lastOrderNumber = 1;
+        static uint lastOrderNumber = 0;
 
         private List<IOrderItem> items = new List<IOrderItem>();
 
@@ -58,7 +58,7 @@ namespace CowboyCafe.Data
         /// Remove an item from the order
         /// </summary>
         /// <param name="item">IOrderItem to remove</param>
-        private void Remove(IOrderItem item)
+        public void Remove(IOrderItem item)
         {
             items.Remove(item);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));

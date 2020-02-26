@@ -42,6 +42,9 @@ namespace CowboyCafe.DataTests
         {
             var order = new Order();
             var item = new MockOrderItem();
+            order.Add(item);
+            order.Remove(item);
+            
             Assert.DoesNotContain(item, order.Items);
         }
 
