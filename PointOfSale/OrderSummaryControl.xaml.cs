@@ -1,8 +1,4 @@
-﻿/*OrderControl.cs
- * Author: Tristan Larson
- * Contains event handlers and logic for the buttons in the OrderControl.
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -14,23 +10,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using CowboyCafe.Data;
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for OrderControl.xaml
+    /// Interaction logic for OrderSummaryControl.xaml
     /// </summary>
-    public partial class OrderControl : UserControl
+    public partial class OrderSummaryControl : UserControl
     {
-
-        public OrderControl()
+        public OrderSummaryControl()
         {
             InitializeComponent();
-
-
-            this.DataContext = new Order();
         }
-
     }
 }

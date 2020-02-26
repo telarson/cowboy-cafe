@@ -13,7 +13,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Abstract Class for Drinks
     /// </summary>
-    public abstract class Drink
+    public abstract class Drink : IOrderItem
     {
         /// <summary>
         /// Size of the drink
@@ -39,5 +39,7 @@ namespace CowboyCafe.Data
         /// List of special instructions for the drink
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
+
+        IEnumerable<string> IOrderItem.SpecialInstructions => SpecialInstructions.ToArray();
     }
 }
