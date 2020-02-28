@@ -30,7 +30,41 @@ namespace PointOfSale
 
 
             this.DataContext = new Order();
+
+            CompleteOrderButton.Click += OnCompleteOrderButton;
+            CancelOrderButton.Click += OnCancelOrderButton;
         }
+
+        /// <summary>
+        /// Event handler for the ItemSelectionButton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void OnItemSelectionButton(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Event handler for CancelOrderButton, creates a new order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void OnCancelOrderButton(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = new Order();
+        }
+
+        /// <summary>
+        /// Event handler for the CompleteOrderButton, creates a new order.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void OnCompleteOrderButton(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = new Order();
+        }
+
 
     }
 }

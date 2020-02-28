@@ -9,19 +9,37 @@ using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// Class to represent an order.
+    /// </summary>
     public class Order : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Event to be raised when bound properties change
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
+        /// <summary>
+        /// static uint to track the order number.
+        /// </summary>
         static uint lastOrderNumber = 0;
 
+        /// <summary>
+        /// Private list of the items in the order.
+        /// </summary>
         private List<IOrderItem> items = new List<IOrderItem>();
 
+        /// <summary>
+        /// IEnumerable to access the items of the order
+        /// </summary>
         public IEnumerable<IOrderItem> Items => items.ToArray();
 
+        /// <summary>
+        /// Private backing variable for the subtotal
+        /// </summary>
         private double subtotal;
         /// <summary>
-        /// 
+        /// Returns the subtotal for the current order.
         /// </summary>
         public double Subtotal
         {
