@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280">
     <Grid>
-        <local:OrderControl x:Name="MainControl"></local:OrderControl>
+        <local:OrderControl x:Name="OrderControl"></local:OrderControl>
     </Grid>
     
 </Window>
