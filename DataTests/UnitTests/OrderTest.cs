@@ -88,6 +88,17 @@ namespace CowboyCafe.DataTests
                 Assert.Contains(item, order.Items);
             }
         }
+
+        [Fact]
+        //The order number should go up with each order created.
+        public void OrderNumberShouldIncrese()
+        {
+            var orderOne = new Order();
+            var orderTwo = new Order();
+
+            Assert.True(orderOne.OrderNumber < orderTwo.OrderNumber);
+
+        }
         
 
 
