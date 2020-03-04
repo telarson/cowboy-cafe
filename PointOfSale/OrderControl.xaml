@@ -33,7 +33,9 @@
                 <Button x:Name="CancelOrderButton" Content="Cancel Order"/>
                 <Button x:Name="CompleteOrderButton" Content="Complete Order"/>
             </StackPanel>
-            <local:MenuItemSelectionControl x:Name="MenuItemSelectionControl" Grid.Row="1"/>
+            <Border Grid.Row="1" x:Name="Container">
+                <local:MenuItemSelectionControl x:Name="MenuItemSelectionControl"/>
+            </Border>
         </Grid>
         <Grid Grid.Column="1">
             <local:OrderSummaryControl x:Name="OrderSummaryControl"/>

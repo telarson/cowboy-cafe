@@ -14,8 +14,8 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
             <TextBlock TextAlignment="Center">Entrees</TextBlock>
-            <Button x:Name="AddAngryChickenButton" Content="Angry Chicken"/>
-            <Button x:Name="AddCowpokeChiliButton" Content="Cowpoke Chili"/>
+            <Button x:Name="AddAngryChickenButton" Content="Angry Chicken" Tag="AngryChicken"/>
+            <Button x:Name="AddCowpokeChiliButton" Content="Cowpoke Chili" Tag="CowpokeChili"/>
             <Button x:Name="AddRustlersRibsButton" Content="Rustler's Ribs"/>
             <Button x:Name="AddPecosPulledPorkButton" Content="Pecos Pulled Pork"/>
             <Button x:Name="AddTrailBurgerButton" Content="Trail Burger" />

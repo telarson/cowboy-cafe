@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CowboyCafe.Extensions;
 
 namespace PointOfSale
 {
@@ -19,13 +20,15 @@ namespace PointOfSale
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
+
         public MenuItemSelectionControl()
         {
+
             InitializeComponent();
             //Hook up events with handlers for entree buttons.
-            AddCowpokeChiliButton.Click += OnAddCowpokeChiliButtonClicked;
+            AddCowpokeChiliButton.Click += OnIOrderItemButtonClicked;
             AddDakotaDoubleBurgerButton.Click += OnAddDakotaDoubleBurgerButtonClicked;
-            AddAngryChickenButton.Click += OnAddAngryChickenButtonClicked;
+            AddAngryChickenButton.Click += OnIOrderItemButtonClicked;
             AddRustlersRibsButton.Click += OnAddRustlersRibsButtonClicked;
             AddPecosPulledPorkButton.Click += OnAddPecosPulledPorkButtonClicked;
             AddTrailBurgerButton.Click += OnAddTrailBurgerButtonClicked;
@@ -42,6 +45,35 @@ namespace PointOfSale
             AddTexasTeaButton.Click += OnAddTexasTeaButtonClicked;
             AddCowboyCoffeeButton.Click += OnAddCowboyCoffeeButtonClicked;
             AddWaterButton.Click += OnAddWaterButtonClicked;
+
+            
+        }
+
+        /// <summary>
+        /// Generalized event handler for button IOrderItem button clicks
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnIOrderItemButtonClicked(object sender, RoutedEventArgs e)
+        {
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order CurrentOrder)
+            {
+                if(sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "CowpokeChili":
+                            CurrentOrder.Add(new CowpokeChili());
+                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            break;
+                        case "AngryChicken":
+                            CurrentOrder.Add(new AngryChicken());
+                            break;
+
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -51,8 +83,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Order CurrentOrder)
+            var orderControl = this.FindAncestor<OrderControl>();
+            if (DataContext is Order CurrentOrder) 
+            { 
                 CurrentOrder.Add(new CowpokeChili());
+                orderControl.SwapScreen(new CustomizeCowpokeChili());
+            }
         }
 
         /// <summary>

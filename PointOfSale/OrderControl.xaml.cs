@@ -33,6 +33,17 @@ namespace PointOfSale
 
             CompleteOrderButton.Click += OnCompleteOrderButton;
             CancelOrderButton.Click += OnCancelOrderButton;
+            ItemSelectionButton.Click += OnItemSelectionButton;
+            
+        }
+
+        /// <summary>
+        /// Swaps the content shown in Container with the given UIElement
+        /// </summary>
+        /// <param name="element"></param>
+        public void SwapScreen(UIElement element)
+        {
+            Container.Child = element;
         }
 
         /// <summary>
@@ -42,7 +53,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnItemSelectionButton(object sender, RoutedEventArgs e)
         {
-
+            SwapScreen(new MenuItemSelectionControl());
         }
 
         /// <summary>
