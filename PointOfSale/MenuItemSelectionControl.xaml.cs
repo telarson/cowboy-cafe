@@ -64,8 +64,11 @@ namespace PointOfSale
                     switch (button.Tag)
                     {
                         case "CowpokeChili":
-                            CurrentOrder.Add(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
+                            var item = new CowpokeChili();
+                            var screen = new CustomizeCowpokeChili();
+                            screen.DataContext = item;
+                            CurrentOrder.Add(item);
+                            orderControl.SwapScreen(screen);
                             break;
                         case "AngryChicken":
                             CurrentOrder.Add(new AngryChicken());

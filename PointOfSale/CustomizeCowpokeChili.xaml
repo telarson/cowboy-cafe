@@ -8,6 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <TextBlock FontSize="30" Text="Customize CowpokeChili"/>
-        <CheckBox x:Name="G" Content="BREAD"/>
+        <CheckBox IsChecked="{Binding Path=Cheese}" x:Name="Cheese" Content="Cheese"/>
+        
     </Grid>
 </UserControl>

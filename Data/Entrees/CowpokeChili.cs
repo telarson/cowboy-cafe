@@ -6,19 +6,31 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
+
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A class representing the Cowpoke Chili entree
     /// </summary>
-    public class CowpokeChili : Entree, INotifyPropertyChanged
+    public class CowpokeChili : Entree
     {
-        public event PropertyChangedEventHandler PropertyChanged;
 
+        private bool cheese = true;
         /// <summary>
         /// If the chili is topped with cheese
         /// </summary>
-        public bool Cheese { get; set; } = true;
+        public bool Cheese 
+        {
+            get
+            {
+                return cheese;
+            }
+            set 
+            {
+                cheese = value;
+                NotifyPropertyChange("Cheese");
+            } 
+        }
 
         /// <summary>
         /// If the chili is topped with sour cream
@@ -84,6 +96,8 @@ namespace CowboyCafe.Data
 
             return "Cowpoke Chili";
         }
+
+        
     }
 }
 
