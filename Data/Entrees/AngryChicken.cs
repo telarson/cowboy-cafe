@@ -12,6 +12,7 @@ namespace CowboyCafe.Data
     /// </summary>
     public class AngryChicken : Entree
     {
+        
         /// <summary>
         /// The price of an Angry Chicken
         /// </summary>
@@ -34,15 +35,35 @@ namespace CowboyCafe.Data
             }
         }
 
+        private bool bread = true;
         /// <summary>
         /// Bool representing if the Angry Chicken should include bread
         /// </summary>
-        public bool Bread { get; set; } = true;
+        public bool Bread
+        {
+            get { return bread; }
 
+            set
+            {
+                bread = value;
+                NotifyPropertyChange("Bread");
+            }
+        }
+
+        private bool pickle = true;
         /// <summary>
         /// Bool representing if pickle is included with the Angry Chicken
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get { return pickle; }
+            
+            set
+            {
+                pickle = value;
+                NotifyPropertyChange("Pickle");
+            }
+        }
 
         /// <summary>
         /// List to store special instructions for the Angry Chicken

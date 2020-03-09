@@ -22,45 +22,126 @@ namespace CowboyCafe.Data
         /// </summary>
         public override uint Calories { get; } = 464;
 
+        private bool bun = true;
         /// <summary>
         /// Boolean flag for a Bun on the DakotaDoubleBurger
         /// </summary>
-        public bool Bun { get; set; } = true;
+        public bool Bun
+        {
+            get { return bun; }
 
+            set
+            {
+                bun = value;
+                NotifyPropertyChange("Bun");
+            }
+        }
+
+        private bool ketchup = true;
         /// <summary>
         /// Boolean flag for Ketchup on the DakotaDoubleBurger
         /// </summary>
-        public bool Ketchup { get; set; } = true;
+        public bool Ketchup
+        {
+            get { return ketchup; }
 
+            set
+            {
+                ketchup = value;
+                NotifyPropertyChange("Ketchup");
+            }
+        }
+
+        private bool mustard = true;
         /// <summary>
         /// Boolean flag for Mustard on the DakotaDoubleBurger
         /// </summary>
-        public bool Mustard { get; set; } = true;
+        public bool Mustard
+        {
+            get { return mustard; }
 
+            set
+            {
+                mustard = value;
+                NotifyPropertyChange("Mustard");
+            }
+        }
+
+        private bool pickle = true;
         /// <summary>
         /// Boolean flag for Pickle on the DakotaDoubleBurger
         /// </summary>
-        public bool Pickle { get; set; } = true;
+        public bool Pickle
+        {
+            get { return pickle; }
 
+            set
+            {
+                pickle = value;
+                NotifyPropertyChange("Pickle");
+            }
+        }
+
+        private bool cheese = true;
         /// <summary>
         /// Boolean flag for Cheese on the DakotaDoubleBurger
         /// </summary>
-        public bool Cheese { get; set; } = true;
+        public bool Cheese
+        {
+            get { return cheese; }
 
+            set
+            {
+                cheese = value;
+                NotifyPropertyChange("Cheese");
+            }
+        }
+
+        private bool tomato = true;
         /// <summary>
         /// Boolean flag for Tomato on the DakotaDoubleBurger
         /// </summary>
-        public bool Tomato { get; set; } = true;
+        public bool Tomato
+        {
+            get { return tomato; }
 
+            set
+            {
+                tomato = value;
+                NotifyPropertyChange("Tomato");
+            }
+        }
+
+        private bool lettuce = true;
         /// <summary>
         /// Boolean flag for Lettuce on the DakotaDoubleBurger
         /// </summary>
-        public bool Lettuce { get; set; } = true;
+        public bool Lettuce
+        {
+            get { return lettuce; }
 
+            set
+            {
+                lettuce = value;
+                NotifyPropertyChange("Lettuce");
+            }
+        }
+
+        private bool mayo = true;
         /// <summary>
         /// Boolean flag for Mayo on the DakotaDoubleBurger
         /// </summary>
-        public bool Mayo { get; set; } = true;
+        public bool Mayo
+        {
+            get { return mayo; }
+
+            set
+            {
+                mayo = value;
+                NotifyPropertyChange("Mayo");
+
+            }
+        }
 
         /// <summary>
         /// Special instructions for the DakotaDoubleBurger

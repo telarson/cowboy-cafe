@@ -27,12 +27,12 @@ namespace PointOfSale
             InitializeComponent();
             //Hook up events with handlers for entree buttons.
             AddCowpokeChiliButton.Click += OnIOrderItemButtonClicked;
-            AddDakotaDoubleBurgerButton.Click += OnAddDakotaDoubleBurgerButtonClicked;
+            AddDakotaDoubleBurgerButton.Click += OnIOrderItemButtonClicked;
             AddAngryChickenButton.Click += OnIOrderItemButtonClicked;
-            AddRustlersRibsButton.Click += OnAddRustlersRibsButtonClicked;
-            AddPecosPulledPorkButton.Click += OnAddPecosPulledPorkButtonClicked;
-            AddTrailBurgerButton.Click += OnAddTrailBurgerButtonClicked;
-            AddTexasTripleBurgerButton.Click += OnAddTexasTripleBurgerButtonClicked;
+            AddRustlersRibsButton.Click += OnIOrderItemButtonClicked;
+            AddPecosPulledPorkButton.Click += OnIOrderItemButtonClicked;
+            AddTrailBurgerButton.Click += OnIOrderItemButtonClicked;
+            AddTexasTripleBurgerButton.Click += OnIOrderItemButtonClicked;
 
             //Hook up events with handlers for side buttons.
             AddChiliCheeseFries.Click += OnAddChiliCheeseFriesButtonClicked;
@@ -64,14 +64,61 @@ namespace PointOfSale
                     switch (button.Tag)
                     {
                         case "CowpokeChili":
-                            var item = new CowpokeChili();
-                            var screen = new CustomizeEntree(item as IOrderItem);
-                            CurrentOrder.Add(item);
-                            orderControl.SwapScreen(screen);
-                            break;
+                            {
+                                var item = new CowpokeChili();
+                                var screen = new CustomizeEntree(item as IOrderItem);
+                                CurrentOrder.Add(item);
+                                orderControl.SwapScreen(screen);
+                                break;
+                            }
                         case "AngryChicken":
-                            CurrentOrder.Add(new AngryChicken());
-                            break;
+                            {
+                                var item = new AngryChicken();
+                                var screen = new CustomizeEntree(item as IOrderItem);
+                                CurrentOrder.Add(item);
+                                orderControl.SwapScreen(screen);
+                                break;
+                            }
+                        case "DakotaDoubleBurger":
+                            {
+                                var item = new DakotaDoubleBurger();
+                                var screen = new CustomizeEntree(item as IOrderItem);
+                                CurrentOrder.Add(item);
+                                orderControl.SwapScreen(screen);
+                                break;
+                            }
+                        case "PecosPulledPork":
+                            {
+                                var item = new PecosPulledPork();
+                                var screen = new CustomizeEntree(item as IOrderItem);
+                                CurrentOrder.Add(item);
+                                orderControl.SwapScreen(screen);
+                                break;
+                            }
+                        case "RustlersRibs":
+                            {
+                                var item = new RustlersRibs();
+                               //var screen = new CustomizeEntree(item as IOrderItem);
+                                CurrentOrder.Add(item);
+                                //orderControl.SwapScreen(screen);
+                                break;
+                            }
+                        case "TexasTripleBurger":
+                            {
+                                var item = new TexasTripleBurger();
+                                var screen = new CustomizeEntree(item as IOrderItem);
+                                CurrentOrder.Add(item);
+                                orderControl.SwapScreen(screen);
+                                break;
+                            }
+                        case "TrailBurger":
+                            {
+                                var item = new TrailBurger();
+                                var screen = new CustomizeEntree(item as IOrderItem);
+                                CurrentOrder.Add(item);
+                                orderControl.SwapScreen(screen);
+                                break;
+                            }
 
                     }
                 }

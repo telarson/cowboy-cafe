@@ -16,11 +16,11 @@
             <TextBlock TextAlignment="Center">Entrees</TextBlock>
             <Button x:Name="AddAngryChickenButton" Content="Angry Chicken" Tag="AngryChicken"/>
             <Button x:Name="AddCowpokeChiliButton" Content="Cowpoke Chili" Tag="CowpokeChili"/>
-            <Button x:Name="AddRustlersRibsButton" Content="Rustler's Ribs"/>
-            <Button x:Name="AddPecosPulledPorkButton" Content="Pecos Pulled Pork"/>
-            <Button x:Name="AddTrailBurgerButton" Content="Trail Burger" />
-            <Button x:Name="AddDakotaDoubleBurgerButton" Content="Dakota Double Burger"/>
-            <Button x:Name="AddTexasTripleBurgerButton" Content="Texas Triple Burger"/>
+            <Button x:Name="AddRustlersRibsButton" Content="Rustler's Ribs" Tag="RustlersRibs"/>
+            <Button x:Name="AddPecosPulledPorkButton" Content="Pecos Pulled Pork" Tag="PecosPulledPork"/>
+            <Button x:Name="AddTrailBurgerButton" Content="Trail Burger" Tag="TrailBurger"/>
+            <Button x:Name="AddDakotaDoubleBurgerButton" Content="Dakota Double Burger" Tag="DakotaDoubleBurger"/>
+            <Button x:Name="AddTexasTripleBurgerButton" Content="Texas Triple Burger" Tag="TexasTripleBurger"/>
         </StackPanel>
         <StackPanel Grid.Column="1">
             <TextBlock TextAlignment="Center">Sides</TextBlock>

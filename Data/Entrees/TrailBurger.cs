@@ -22,30 +22,80 @@ namespace CowboyCafe.Data
         /// </summary>
         public override uint Calories { get; } = 288;
 
+        private bool bun = true;
         /// <summary>
-        /// Boolean flag for a Bun on the Trailburger
+        /// Boolean flag for a Bun on the TrailBurger
         /// </summary>
-        public bool Bun { get; set; } = true;
+        public bool Bun
+        {
+            get { return bun; }
 
-        /// <summary>
-        /// Boolean flag for Ketchup on the Trailburger
-        /// </summary>
-        public bool Ketchup { get; set; } = true;
+            set
+            {
+                bun = value;
+                NotifyPropertyChange("Bun");
+            }
+        }
 
+        private bool ketchup = true;
         /// <summary>
-        /// Boolean flag for Mustard on the Trailburger
+        /// Boolean flag for Ketchup on the TrailBurger
         /// </summary>
-        public bool Mustard { get; set; } = true;
+        public bool Ketchup
+        {
+            get { return ketchup; }
 
-        /// <summary>
-        /// Boolean flag for Pickle on the Trailburger
-        /// </summary>
-        public bool Pickle { get; set; } = true;
+            set
+            {
+                ketchup = value;
+                NotifyPropertyChange("Ketchup");
+            }
+        }
 
+        private bool mustard = true;
         /// <summary>
-        /// Boolean flag for Cheese on the Trailburger
+        /// Boolean flag for Mustard on the TrailBurger
         /// </summary>
-        public bool Cheese { get; set; } = true;
+        public bool Mustard
+        {
+            get { return mustard; }
+
+            set
+            {
+                mustard = value;
+                NotifyPropertyChange("Mustard");
+            }
+        }
+
+        private bool pickle = true;
+        /// <summary>
+        /// Boolean flag for Pickle on the TrailBurger
+        /// </summary>
+        public bool Pickle
+        {
+            get { return pickle; }
+
+            set
+            {
+                pickle = value;
+                NotifyPropertyChange("Pickle");
+            }
+        }
+
+        private bool cheese = true;
+        /// <summary>
+        /// Boolean flag for Cheese on the TrailBurger
+        /// </summary>
+        public bool Cheese
+        {
+            get { return cheese; }
+
+            set
+            {
+                cheese = value;
+                NotifyPropertyChange("Cheese");
+            }
+        }
 
         /// <summary>
         /// Special instructions for the Trailburger
