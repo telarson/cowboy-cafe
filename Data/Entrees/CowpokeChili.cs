@@ -14,8 +14,11 @@ namespace CowboyCafe.Data
     /// </summary>
     public class CowpokeChili : Entree
     {
-
+        /// <summary>
+        /// Private backing variable for Cheese;
+        /// </summary>
         private bool cheese = true;
+
         /// <summary>
         /// If the chili is topped with cheese
         /// </summary>
@@ -33,19 +36,66 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
+        /// Private backing variable for SoourCream;
+        /// </summary>
+        private bool sourCream = true;
+        /// <summary>
         /// If the chili is topped with sour cream
         /// </summary>
-        public bool SourCream { get; set; } = true;
+        public bool SourCream
+        {
+            get
+            {
+                return sourCream;
+            }
+
+            set
+            {
+                sourCream = value;
+                NotifyPropertyChange("SourCream");
+            }
+        }
+
+        /// <summary>
+        /// Private backing variable for GreenOnions;
+        /// </summary>
+        private bool greenOnions = true;
 
         /// <summary>
         /// If the chili is topped with green onions
         /// </summary>
-        public bool GreenOnions { get; set; } = true;
+        public bool GreenOnions
+        {
+            get
+            {
+                return greenOnions;
+            }
+
+            set
+            {
+                greenOnions = value;
+                NotifyPropertyChange("GreenOnions");
+            }
+        }
+
+        /// <summary>
+        /// Private backing variable for TortillaStrips;
+        /// </summary>
+        public bool tortillaStrips = true;
 
         /// <summary>
         /// If the chili is topped with tortilla strips
         /// </summary>
-        public bool TortillaStrips { get; set; } = true;
+        public bool TortillaStrips
+        {
+            get { return tortillaStrips; }
+
+            set
+            {
+                tortillaStrips = value;
+                NotifyPropertyChange("TortillaStrips");
+            }
+        }
 
         /// <summary>
         /// The price of the chili

@@ -65,8 +65,7 @@ namespace PointOfSale
                     {
                         case "CowpokeChili":
                             var item = new CowpokeChili();
-                            var screen = new CustomizeCowpokeChili();
-                            screen.DataContext = item;
+                            var screen = new CustomizeEntree(item as IOrderItem);
                             CurrentOrder.Add(item);
                             orderControl.SwapScreen(screen);
                             break;
@@ -90,7 +89,7 @@ namespace PointOfSale
             if (DataContext is Order CurrentOrder) 
             { 
                 CurrentOrder.Add(new CowpokeChili());
-                orderControl.SwapScreen(new CustomizeCowpokeChili());
+                //orderControl.SwapScreen(new CustomizeEntree());
             }
         }
 
