@@ -24,17 +24,17 @@
         </StackPanel>
         <StackPanel Grid.Column="1">
             <TextBlock TextAlignment="Center">Sides</TextBlock>
-            <Button x:Name="AddBakedBeansButton" Content="BakedBeans"/>
-            <Button x:Name="AddChiliCheeseFries" Content="Chili Cheese Fries"/>
-            <Button x:Name="AddCornDodgersButton" Content="Corn Dodgers"/>
-            <Button x:Name="AddPanDeCampoButton" Content="Pan de Campos"/>
+            <Button x:Name="AddBakedBeansButton" Content="BakedBeans" Tag="BakedBeans"/>
+            <Button x:Name="AddChiliCheeseFries" Content="Chili Cheese Fries" Tag="ChiliCheeseFries"/>
+            <Button x:Name="AddCornDodgersButton" Content="Corn Dodgers" Tag="CornDodgers"/>
+            <Button x:Name="AddPanDeCampoButton" Content="Pan de Campo" Tag="PanDeCampo"/>
         </StackPanel>
         <StackPanel Grid.Column="2">
             <TextBlock TextAlignment="Center">Drinks</TextBlock>
-            <Button x:Name="AddCowboyCoffeeButton" Content="Cowboy Coffee"/>
-            <Button x:Name="AddWaterButton" Content="Water"/>
-            <Button x:Name="AddJerkedSodaButton" Content="Jerked Soda"/>
-            <Button x:Name="AddTexasTeaButton" Content="Texas Tea"/>
+            <Button x:Name="AddCowboyCoffeeButton" Content="Cowboy Coffee" Tag="CowboyCoffee"/>
+            <Button x:Name="AddWaterButton" Content="Water" Tag="Water"/>
+            <Button x:Name="AddJerkedSodaButton" Content="Jerked Soda" Tag="JerkedSoda"/>
+            <Button x:Name="AddTexasTeaButton" Content="Texas Tea" Tag="TexasTea"/>
         </StackPanel>
     </Grid>
 </UserControl>

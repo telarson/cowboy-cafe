@@ -35,10 +35,10 @@ namespace PointOfSale
             AddTexasTripleBurgerButton.Click += OnIOrderItemButtonClicked;
 
             //Hook up events with handlers for side buttons.
-            AddChiliCheeseFries.Click += OnAddChiliCheeseFriesButtonClicked;
-            AddCornDodgersButton.Click += OnAddCornDodgersButtonClicked;
-            AddPanDeCampoButton.Click += OnAddPanDeCampoButtonClicked;
-            AddBakedBeansButton.Click += OnAddBakedBeansButtonClicked;
+            AddChiliCheeseFries.Click += OnIOrderItemButtonClicked;
+            AddCornDodgersButton.Click += OnIOrderItemButtonClicked;
+            AddPanDeCampoButton.Click += OnIOrderItemButtonClicked;
+            AddBakedBeansButton.Click += OnIOrderItemButtonClicked;
 
             //Hook up events with handlers for drink buttons.
             AddJerkedSodaButton.Click += OnAddJerkedSodaButtonClicked;
@@ -119,7 +119,42 @@ namespace PointOfSale
                                 orderControl.SwapScreen(screen);
                                 break;
                             }
-
+                        case "BakedBeans":
+                            {
+                                var item = new BakedBeans();
+                                var screen = new CustomizeSide();
+                                screen.DataContext = item;
+                                CurrentOrder.Add(item);
+                                orderControl.SwapScreen(screen);
+                                break;
+                            }
+                        case "ChiliCheeseFries":
+                            {
+                                var item = new ChiliCheeseFries();
+                                var screen = new CustomizeSide();
+                                screen.DataContext = item;
+                                CurrentOrder.Add(item);
+                                orderControl.SwapScreen(screen);
+                                break;
+                            }
+                        case "CornDodgers":
+                            {
+                                var item = new CornDodgers();
+                                var screen = new CustomizeSide();
+                                screen.DataContext = item;
+                                CurrentOrder.Add(item);
+                                orderControl.SwapScreen(screen);
+                                break;
+                            }
+                        case "PanDeCampo":
+                            {
+                                var item = new PanDeCampo();
+                                var screen = new CustomizeSide();
+                                screen.DataContext = item;
+                                CurrentOrder.Add(item);
+                                orderControl.SwapScreen(screen);
+                                break;
+                            }
                     }
                 }
             }
