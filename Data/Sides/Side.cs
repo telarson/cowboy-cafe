@@ -25,7 +25,7 @@ namespace CowboyCafe.Data
         /// </summary>
         private Size size;
         /// <summary>
-        /// Gets the size of the entree
+        /// Gets the size of the side
         /// </summary>
         public virtual Size Size
         {

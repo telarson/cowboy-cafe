@@ -6,6 +6,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -13,12 +14,32 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Abstract Class for Drinks
     /// </summary>
-    public abstract class Drink : IOrderItem
+    public abstract class Drink : IOrderItem, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
-        /// Size of the drink
+        /// Private backing variable for Size
         /// </summary>
-        public Size Size { get; set; } = Size.Small;
+        private Size size;
+        /// <summary>
+        /// Gets the size of the drink
+        /// </summary>
+        public virtual Size Size
+        {
+            get
+            {
+                return size;
+            }
+
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            }
+        }
 
         /// <summary>
         /// Price of the drink
@@ -30,10 +51,20 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract uint Calories { get; }
 
+        private bool ice = true;
         /// <summary>
         /// Flag for Ice in the drink
         /// </summary>
-        public virtual bool Ice { get; set; } = true;
+        public virtual bool Ice
+        {
+            get { return ice; }
+
+            set
+            {
+                ice = value;
+                NotifyPropertyChange("Ice");
+            }
+        }
 
         /// <summary>
         /// List of special instructions for the drink
@@ -41,5 +72,15 @@ namespace CowboyCafe.Data
         public abstract List<string> SpecialInstructions { get; }
 
         IEnumerable<string> IOrderItem.SpecialInstructions => SpecialInstructions.ToArray();
+
+        /// <summary>
+        /// Helper method for boolean prperty changes
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected void NotifyPropertyChange(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+        }
     }
 }

@@ -41,10 +41,10 @@ namespace PointOfSale
             AddBakedBeansButton.Click += OnIOrderItemButtonClicked;
 
             //Hook up events with handlers for drink buttons.
-            AddJerkedSodaButton.Click += OnAddJerkedSodaButtonClicked;
-            AddTexasTeaButton.Click += OnAddTexasTeaButtonClicked;
-            AddCowboyCoffeeButton.Click += OnAddCowboyCoffeeButtonClicked;
-            AddWaterButton.Click += OnAddWaterButtonClicked;
+            AddJerkedSodaButton.Click += OnIOrderItemButtonClicked;
+            AddTexasTeaButton.Click += OnIOrderItemButtonClicked;
+            AddCowboyCoffeeButton.Click += OnIOrderItemButtonClicked;
+            AddWaterButton.Click += OnIOrderItemButtonClicked;
 
             
         }
@@ -155,178 +155,41 @@ namespace PointOfSale
                                 orderControl.SwapScreen(screen);
                                 break;
                             }
+                        case "CowboyCoffee":
+                            {
+                                var item = new CowboyCoffee();
+                                var screen = new CustomizeDrink(item);
+                                CurrentOrder.Add(item);
+                                orderControl.SwapScreen(screen);
+                                break;
+                            }
+                        case "JerkedSoda":
+                            {
+                                var item = new JerkedSoda();
+                                var screen = new CustomizeDrink(item);
+                                CurrentOrder.Add(item);
+                                orderControl.SwapScreen(screen);
+                                break;
+                            }
+                        case "TexasTea":
+                            {
+                                var item = new TexasTea();
+                                var screen = new CustomizeDrink(item);
+                                CurrentOrder.Add(item);
+                                orderControl.SwapScreen(screen);
+                                break;
+                            }
+                        case "Water":
+                            {
+                                var item = new Water();
+                                var screen = new CustomizeDrink(item);
+                                CurrentOrder.Add(item);
+                                orderControl.SwapScreen(screen);
+                                break;
+                            }
                     }
                 }
             }
-        }
-
-        /// <summary>
-        /// Event handler for the AddCowpokeChili button.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
-        {
-            var orderControl = this.FindAncestor<OrderControl>();
-            if (DataContext is Order CurrentOrder) 
-            { 
-                CurrentOrder.Add(new CowpokeChili());
-                //orderControl.SwapScreen(new CustomizeEntree());
-            }
-        }
-
-        /// <summary>
-        /// Event handler for AddRustlersRibsButton click
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddRustlersRibsButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if(DataContext is Order CurrentOrder)
-                CurrentOrder.Add(new RustlersRibs());
-        }
-
-        /// <summary>
-        /// Event handler for AddPecosPulledPorkButton Click
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddPecosPulledPorkButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order CurrentOrder)
-                CurrentOrder.Add(new PecosPulledPork());
-        }
-
-        /// <summary>
-        /// Event handler for AddTrailBurgerButton Click
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddTrailBurgerButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order CurrentOrder)
-                CurrentOrder.Add(new TrailBurger());
-        }
-
-        /// <summary>
-        /// Event handler for the AddDakotaDoubleBurger button.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddDakotaDoubleBurgerButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order CurrentOrder)
-                CurrentOrder.Add(new DakotaDoubleBurger());
-        }
-
-        /// <summary>
-        /// Event handler for the AddDakotaDoubleBurger button.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddTexasTripleBurgerButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order CurrentOrder)
-                CurrentOrder.Add(new TexasTripleBurger());
-        }
-
-        /// <summary>
-        /// Event handler for AddAngryChickenButton
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddAngryChickenButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order CurrentOrder)
-                CurrentOrder.Add(new AngryChicken());
-        }
-
-        /// <summary>
-        /// Event handler for AddChiliCheeseFriesButton
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddChiliCheeseFriesButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order CurrentOrder)
-                CurrentOrder.Add(new ChiliCheeseFries());
-        }
-
-        /// <summary>
-        /// Event handler for AddCornDodgersButton
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddCornDodgersButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order CurrentOrder)
-                CurrentOrder.Add(new CornDodgers());
-        }
-
-        /// <summary>
-        /// Event handler for AddPanDeCampoButton
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddPanDeCampoButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order CurrentOrder)
-                CurrentOrder.Add(new PanDeCampo());
-        }
-
-        /// <summary>
-        /// Event handler for AddBakedBeansButton
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddBakedBeansButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order CurrentOrder)
-                CurrentOrder.Add(new BakedBeans());
-        }
-
-        /// <summary>
-        /// Event handler for AddJerkedSodaButton
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddJerkedSodaButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order CurrentOrder)
-                CurrentOrder.Add(new JerkedSoda());
-        }
-
-        /// <summary>
-        /// Event handler for AddTexasTeaButton
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddTexasTeaButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order CurrentOrder)
-                CurrentOrder.Add(new TexasTea());
-        }
-
-        /// <summary>
-        /// Event handler for AddCowboyCoffeeButton
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddCowboyCoffeeButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order CurrentOrder)
-                CurrentOrder.Add(new CowboyCoffee());
-        }
-
-        /// <summary>
-        /// Event handler for AddWaterButton
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void OnAddWaterButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order CurrentOrder)
-                CurrentOrder.Add(new Water());
         }
 
     }
