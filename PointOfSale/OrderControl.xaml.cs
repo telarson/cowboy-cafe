@@ -64,6 +64,7 @@ namespace PointOfSale
         public void OnCancelOrderButton(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
+            SwapScreen(new MenuItemSelectionControl());
         }
 
         /// <summary>
@@ -74,6 +75,7 @@ namespace PointOfSale
         public void OnCompleteOrderButton(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
+            SwapScreen(new MenuItemSelectionControl());
         }
 
 
