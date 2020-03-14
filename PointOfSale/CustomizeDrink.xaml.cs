@@ -173,7 +173,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Lets the size buttons act like radio buttons where the one selected will be unable to be pressed again.
+        /// Lets the flavor buttons act like radio buttons where the one selected will be unable to be pressed again.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

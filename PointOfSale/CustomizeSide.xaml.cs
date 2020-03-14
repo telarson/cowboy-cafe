@@ -38,7 +38,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void OnSizeButtonClick(object sender, RoutedEventArgs e)
+        public void OnSizeButtonClick(object sender, RoutedEventArgs e)
         {
             if (sender is Button button)
             {
@@ -71,7 +71,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void RadioButtoner(object sender, RoutedEventArgs e)
+        public void RadioButtoner(object sender, RoutedEventArgs e)
         {
 
             if (sender is Button b)

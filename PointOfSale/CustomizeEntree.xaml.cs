@@ -29,7 +29,7 @@ namespace PointOfSale
 
             if (DataContext is IOrderItem currentItem)
             {
-                AddButtonsForEntree(currentItem);
+                AddCheckBoxesForBooleanProperties(currentItem);
             }
         }
 
@@ -37,7 +37,7 @@ namespace PointOfSale
         /// Dynamically adds check boxes to customize the order item.
         /// </summary>
         /// <param name="item"></param>
-        void AddButtonsForEntree(IOrderItem item)
+        void AddCheckBoxesForBooleanProperties(IOrderItem item)
         {
             List<CheckBox> Controls = new List<CheckBox>();
 
