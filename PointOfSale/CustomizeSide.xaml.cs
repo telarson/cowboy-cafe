@@ -23,33 +23,70 @@ namespace PointOfSale
         {
             InitializeComponent();
 
-            largeButton.Click += OnLargeButtonClick;
-            mediumButton.Click += OnMediumButtonClick;
-            smallButton.Click += OnSmallButtonClick;
+            largeButton.Click += OnSizeButtonClick;
+            mediumButton.Click += OnSizeButtonClick;
+            smallButton.Click += OnSizeButtonClick;
+
+            largeButton.Click += RadioButtoner;
+            mediumButton.Click += RadioButtoner;
+            smallButton.Click += RadioButtoner;
 
         }
 
-        void OnLargeButtonClick(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Event handler for clicking the size buttons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnSizeButtonClick(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Side s)
+            if (sender is Button button)
             {
-                s.Size = CowboyCafe.Data.Size.Large;
+                switch (button.Tag)
+                {
+                    case "Large":
+                        if (DataContext is Side d)
+                        {
+                            d.Size = CowboyCafe.Data.Size.Large;
+                        }
+                        break;
+                    case "Medium":
+                        if (DataContext is Side f)
+                        {
+                            f.Size = CowboyCafe.Data.Size.Medium;
+                        }
+                        break;
+                    case "Small":
+                        if (DataContext is Side g)
+                        {
+                            g.Size = CowboyCafe.Data.Size.Small;
+                        }
+                        break;
+                }
             }
         }
 
-        void OnMediumButtonClick(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Lets the sizee buttons act like radio buttons where the one selected will be unable to be pressed again.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void RadioButtoner(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Side s)
-            {
-                s.Size = CowboyCafe.Data.Size.Medium;
-            }
-        }
 
-        void OnSmallButtonClick(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Side s)
+            if (sender is Button b)
             {
-                s.Size = CowboyCafe.Data.Size.Small;
+                b.IsEnabled = false;
+                foreach (UIElement element in SizeButtonPanel.Children)
+                {
+                    if (element is Button button)
+                    {
+                        if (button != sender as Button)
+                        {
+                            button.IsEnabled = true;
+                        }
+                    }
+                }
             }
         }
     }

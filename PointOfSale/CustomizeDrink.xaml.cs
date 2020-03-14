@@ -29,7 +29,23 @@ namespace PointOfSale
             smallButton.Click += OnSizeButtonClick;
             mediumButton.Click += OnSizeButtonClick;
             largeButton.Click += OnSizeButtonClick;
-            
+
+            smallButton.Click += SizeRadioButtoner;
+            mediumButton.Click += SizeRadioButtoner;
+            largeButton.Click += SizeRadioButtoner;
+
+            CreamSodaButton.Click += OnFlavorButtonClick;
+            OrangeSodaButton.Click += OnFlavorButtonClick;
+            SarsparillaButton.Click += OnFlavorButtonClick;
+            BirchBeerButton.Click += OnFlavorButtonClick;
+            RootBeerButton.Click += OnFlavorButtonClick;
+
+            CreamSodaButton.Click += FlavorRadioButtoner;
+            OrangeSodaButton.Click += FlavorRadioButtoner;
+            SarsparillaButton.Click += FlavorRadioButtoner;
+            BirchBeerButton.Click += FlavorRadioButtoner;
+            RootBeerButton.Click += FlavorRadioButtoner;
+
             DataContext = item;
 
             if (DataContext is IOrderItem currentItem)
@@ -41,7 +57,6 @@ namespace PointOfSale
                     FlavorPanel.Visibility = Visibility.Visible;
                 }
             }
-
             
         }
 
@@ -62,6 +77,9 @@ namespace PointOfSale
                     newCheckBox.Content = prop.Name;
                     newCheckBox.SetBinding(CheckBox.IsCheckedProperty, newBinding);
 
+                    ScaleTransform scale = new ScaleTransform(2.0, 2.0);
+                    newCheckBox.RenderTransform = scale;
+
                     Controls.Add(newCheckBox);
                 }
             }
@@ -69,6 +87,11 @@ namespace PointOfSale
             CheckBoxList.ItemsSource = Controls;
         }
 
+        /// <summary>
+        /// Event handler for clicking the size buttons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void OnSizeButtonClick(object sender, RoutedEventArgs e)
         {
             if (sender is Button button)
@@ -97,28 +120,80 @@ namespace PointOfSale
             }
         }
 
-        void OnLargeButtonClick(object sender, RoutedEventArgs e)
+
+        void OnFlavorButtonClick(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Drink d)
+            if (DataContext is JerkedSoda soda)
             {
-                d.Size = CowboyCafe.Data.Size.Large;
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "CreamSoda":
+                            soda.Flavor = SodaFlavor.CreamSoda;
+                            break;
+                        case "OrangeSoda":
+                            soda.Flavor = SodaFlavor.OrangeSoda;
+                            break;
+                        case "Sarsparilla":
+                            soda.Flavor = SodaFlavor.Sarsparilla;
+                            break;
+                        case "BirchBeer":
+                            soda.Flavor = SodaFlavor.BirchBeer;
+                            break;
+                        case "RootBeer":
+                            soda.Flavor = SodaFlavor.RootBeer;
+                            break;
+                    }
+                }
             }
         }
 
-        void OnMediumButtonClick(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Lets the size buttons act like radio buttons where the one selected will be unable to be pressed again.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void SizeRadioButtoner(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Drink d)
+            if (sender is Button b)
             {
-                d.Size = CowboyCafe.Data.Size.Medium;
+                b.IsEnabled = false;
+                foreach (UIElement element in SizeButtonPanel.Children)
+                {
+                    if (element is Button button)
+                    {
+                        if (button != sender as Button)
+                        {
+                            button.IsEnabled = true;
+                        }
+                    }
+                }
             }
         }
 
-        void OnSmallButtonClick(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Lets the size buttons act like radio buttons where the one selected will be unable to be pressed again.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void FlavorRadioButtoner(object sender, RoutedEventArgs e)
         {
-            if (DataContext is Drink d)
+            if (sender is Button b)
             {
-                d.Size = CowboyCafe.Data.Size.Small;
+                b.IsEnabled = false;
+                foreach (UIElement element in FlavorSelectionPanel.Children)
+                {
+                    if (element is Button button)
+                    {
+                        if (button != sender as Button)
+                        {
+                            button.IsEnabled = true;
+                        }
+                    }
+                }
             }
         }
+
     }
 }

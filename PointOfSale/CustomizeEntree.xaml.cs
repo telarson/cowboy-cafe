@@ -53,6 +53,9 @@ namespace PointOfSale
                     newCheckBox.Content = prop.Name;
                     newCheckBox.SetBinding(CheckBox.IsCheckedProperty, newBinding);
 
+                    ScaleTransform scale = new ScaleTransform(2.0, 2.0);
+                    newCheckBox.RenderTransform = scale;
+
                     Controls.Add(newCheckBox);
                 }
             }

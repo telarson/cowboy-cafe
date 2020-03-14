@@ -7,10 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel>
-            <Button x:Name="smallButton" Content="Small"/>
-            <Button x:Name="mediumButton" Content="Medium"/>
-            <Button x:Name="largeButton" Content="Large"/>
+        <StackPanel x:Name="SizeButtonPanel">
+            <Button x:Name="smallButton" Content="Small" Tag="Small" IsEnabled="False"/>
+            <Button x:Name="mediumButton" Content="Medium" Tag="Medium"/>
+            <Button x:Name="largeButton" Content="Large" Tag="Large"/>
         </StackPanel>
     </Grid>
 </UserControl>
