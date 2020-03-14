@@ -14,9 +14,9 @@
         </Grid.ColumnDefinitions>
         <Border Grid.Column="0" x:Name="SizePanel">
             <StackPanel>
-                <Button x:Name="smallButton" Content="Small"/>
-                <Button x:Name="mediumButton" Content="Medium"/>
-                <Button x:Name="largeButton" Content="Large"/>
+                <Button x:Name="smallButton" Content="Small" Tag="Small"/>
+                <Button x:Name="mediumButton" Content="Medium" Tag="Medium"/>
+                <Button x:Name="largeButton" Content="Large" Tag="Large"/>
             </StackPanel>
         </Border>
         <Border Grid.Column="1" x:Name="BoolOptionsPanel">
