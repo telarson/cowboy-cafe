@@ -113,5 +113,10 @@ namespace PointOfSale
             }
         }
 
+        void OnListItemRemoveItemButtonPressed(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }
