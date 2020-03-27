@@ -34,6 +34,8 @@ namespace PointOfSale
             CompleteOrderButton.Click += OnCompleteOrderButton;
             CancelOrderButton.Click += OnCancelOrderButton;
             ItemSelectionButton.Click += OnItemSelectionButton;
+
+            OrderSummaryControl.OrderItemList.SelectionChanged += OnListItemSelection;
             
         }
 
@@ -78,6 +80,38 @@ namespace PointOfSale
             SwapScreen(new MenuItemSelectionControl());
         }
 
+
+        /// <summary>
+        /// Eventhandler that opens a customization screen for the selected item in the 
+        /// OrderSummaryControl's ListBox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void OnListItemSelection(object sender, RoutedEventArgs e)
+        {
+            
+            if (sender is ListBox lb)
+            {
+                IOrderItem selected = lb.SelectedItem as IOrderItem;
+
+                //this.DataContext = sender as IOrderItem;
+                if (selected is Entree)
+                {
+                    SwapScreen(new CustomizeEntree(selected));
+                }
+                else if (selected is Drink)
+                {
+                    SwapScreen(new CustomizeDrink(selected));
+                }
+                else if (selected is Side)
+                {
+                    //this.DataContext = selected;
+                    var sideCustomizer = new CustomizeSide();
+                    sideCustomizer.DataContext = selected;
+                    SwapScreen(sideCustomizer);
+                }
+            }
+        }
 
     }
 }

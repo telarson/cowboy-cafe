@@ -22,7 +22,7 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="{Binding Path=OrderNumber, StringFormat={}Order  {0}}"/>
-        <ListBox Grid.Row="1" ItemsSource="{Binding Path=Items}" ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <ListBox Grid.Row="1" x:Name="OrderItemList" ItemsSource="{Binding Path=Items}" ScrollViewer.VerticalScrollBarVisibility="Auto">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                     <Grid>
