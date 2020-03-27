@@ -37,6 +37,7 @@ namespace PointOfSale
 
             OrderSummaryControl.OrderItemList.SelectionChanged += OnListItemSelection;
             
+            
         }
 
         /// <summary>
@@ -113,10 +114,6 @@ namespace PointOfSale
             }
         }
 
-        void OnListItemRemoveItemButtonPressed(object sender, RoutedEventArgs e)
-        {
-
-        }
 
     }
 }
