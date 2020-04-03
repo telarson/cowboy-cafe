@@ -27,9 +27,11 @@ namespace PointOfSale
             mediumButton.Click += OnSizeButtonClick;
             smallButton.Click += OnSizeButtonClick;
 
+            /*
             largeButton.Click += RadioButtoner;
             mediumButton.Click += RadioButtoner;
             smallButton.Click += RadioButtoner;
+            */
 
         }
 
@@ -66,8 +68,9 @@ namespace PointOfSale
             }
         }
 
+        /*
         /// <summary>
-        /// Lets the sizee buttons act like radio buttons where the one selected will be unable to be pressed again.
+        /// Lets the size buttons act like radio buttons where the one selected will be unable to be pressed again.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -89,5 +92,6 @@ namespace PointOfSale
                 }
             }
         }
+        */
     }
 }

@@ -40,11 +40,13 @@ namespace PointOfSale
             BirchBeerButton.Click += OnFlavorButtonClick;
             RootBeerButton.Click += OnFlavorButtonClick;
 
+            /*
             CreamSodaButton.Click += FlavorRadioButtoner;
             OrangeSodaButton.Click += FlavorRadioButtoner;
             SarsparillaButton.Click += FlavorRadioButtoner;
             BirchBeerButton.Click += FlavorRadioButtoner;
             RootBeerButton.Click += FlavorRadioButtoner;
+            */
 
             DataContext = item;
 
@@ -171,7 +173,7 @@ namespace PointOfSale
                 }
             }
         }
-
+        /*
         /// <summary>
         /// Lets the flavor buttons act like radio buttons where the one selected will be unable to be pressed again.
         /// </summary>
@@ -194,6 +196,7 @@ namespace PointOfSale
                 }
             }
         }
+        */
 
     }
 }

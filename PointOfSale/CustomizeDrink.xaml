@@ -20,7 +20,7 @@
         <Border Grid.Column="0" x:Name="SizePanel">
             <StackPanel x:Name="SizeButtonPanel">
                 <TextBlock Text="Size"/>
-                <Button x:Name="smallButton" Content="Small" Tag="Small" IsEnabled="False"/>
+                <Button x:Name="smallButton" Content="Small" Tag="Small"/>
                 <Button x:Name="mediumButton" Content="Medium" Tag="Medium"/>
                 <Button x:Name="largeButton" Content="Large" Tag="Large"/>
             </StackPanel>
