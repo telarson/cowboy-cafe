@@ -98,9 +98,7 @@ namespace PointOfSale
                         case "RustlersRibs":
                             {
                                 var item = new RustlersRibs();
-                               //var screen = new CustomizeEntree(item as IOrderItem);
                                 CurrentOrder.Add(item);
-                                //orderControl.SwapScreen(screen);
                                 break;
                             }
                         case "TexasTripleBurger":
@@ -122,8 +120,7 @@ namespace PointOfSale
                         case "BakedBeans":
                             {
                                 var item = new BakedBeans();
-                                var screen = new CustomizeSide();
-                                screen.DataContext = item;
+                                var screen = new CustomizeSide(item);
                                 CurrentOrder.Add(item);
                                 orderControl.SwapScreen(screen);
                                 break;
@@ -131,8 +128,7 @@ namespace PointOfSale
                         case "ChiliCheeseFries":
                             {
                                 var item = new ChiliCheeseFries();
-                                var screen = new CustomizeSide();
-                                screen.DataContext = item;
+                                var screen = new CustomizeSide(item);
                                 CurrentOrder.Add(item);
                                 orderControl.SwapScreen(screen);
                                 break;
@@ -140,8 +136,7 @@ namespace PointOfSale
                         case "CornDodgers":
                             {
                                 var item = new CornDodgers();
-                                var screen = new CustomizeSide();
-                                screen.DataContext = item;
+                                var screen = new CustomizeSide(item);
                                 CurrentOrder.Add(item);
                                 orderControl.SwapScreen(screen);
                                 break;
@@ -149,8 +144,7 @@ namespace PointOfSale
                         case "PanDeCampo":
                             {
                                 var item = new PanDeCampo();
-                                var screen = new CustomizeSide();
-                                screen.DataContext = item;
+                                var screen = new CustomizeSide(item);
                                 CurrentOrder.Add(item);
                                 orderControl.SwapScreen(screen);
                                 break;

@@ -107,7 +107,7 @@ namespace PointOfSale
                 else if (selected is Side)
                 {
                     
-                    var sideCustomizer = new CustomizeSide();
+                    var sideCustomizer = new CustomizeSide(selected);
                     sideCustomizer.DataContext = selected;
                     SwapScreen(sideCustomizer);
                 }

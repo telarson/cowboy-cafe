@@ -32,7 +32,7 @@
         <Border Grid.Column="2" x:Name="FlavorPanel" Visibility="Hidden">
             <StackPanel x:Name="FlavorSelectionPanel">
                 <TextBlock Text="Flavor Selection"/>
-                <Button  Name="CreamSodaButton" Content="Creamsoda" Tag="CreamSoda" IsEnabled="False"/>
+                <Button  Name="CreamSodaButton" Content="Creamsoda" Tag="CreamSoda"/>
                 <Button  Name="OrangeSodaButton" Content="OrangeSoda" Tag="OrangeSoda"/>
                 <Button  Name="SarsparillaButton" Content="Sarsparilla" Tag="Sarsparilla"/>
                 <Button  Name="BirchBeerButton" Content="BirchBeer" Tag="BirchBeer"/>

@@ -19,20 +19,36 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeSide : UserControl
     {
-        public CustomizeSide()
+        public CustomizeSide(IOrderItem side)
         {
             InitializeComponent();
+
+            this.DataContext = side;
 
             largeButton.Click += OnSizeButtonClick;
             mediumButton.Click += OnSizeButtonClick;
             smallButton.Click += OnSizeButtonClick;
 
-            /*
+            
             largeButton.Click += RadioButtoner;
             mediumButton.Click += RadioButtoner;
             smallButton.Click += RadioButtoner;
-            */
 
+            if (DataContext is Side s)
+            {
+                switch (s.Size)
+                {
+                    case CowboyCafe.Data.Size.Small:
+                        smallButton.IsEnabled = false;
+                        break;
+                    case CowboyCafe.Data.Size.Medium:
+                        mediumButton.IsEnabled = false;
+                        break;
+                    case CowboyCafe.Data.Size.Large:
+                        largeButton.IsEnabled = false;
+                        break;
+                }
+            }
         }
 
         /// <summary>
@@ -68,7 +84,7 @@ namespace PointOfSale
             }
         }
 
-        /*
+        
         /// <summary>
         /// Lets the size buttons act like radio buttons where the one selected will be unable to be pressed again.
         /// </summary>
@@ -76,7 +92,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void RadioButtoner(object sender, RoutedEventArgs e)
         {
-
+            
             if (sender is Button b)
             {
                 b.IsEnabled = false;
@@ -92,6 +108,6 @@ namespace PointOfSale
                 }
             }
         }
-        */
+        
     }
 }

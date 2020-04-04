@@ -40,13 +40,13 @@ namespace PointOfSale
             BirchBeerButton.Click += OnFlavorButtonClick;
             RootBeerButton.Click += OnFlavorButtonClick;
 
-            /*
+            
             CreamSodaButton.Click += FlavorRadioButtoner;
             OrangeSodaButton.Click += FlavorRadioButtoner;
             SarsparillaButton.Click += FlavorRadioButtoner;
             BirchBeerButton.Click += FlavorRadioButtoner;
             RootBeerButton.Click += FlavorRadioButtoner;
-            */
+            
 
             DataContext = item;
 
@@ -54,12 +54,46 @@ namespace PointOfSale
             {
                 AddCheckBoxesForBooleanProperties(currentItem);
 
-                if (currentItem is JerkedSoda)
+                if (currentItem is JerkedSoda j)
                 {
+                    switch (j.Flavor)
+                    {
+                        case SodaFlavor.CreamSoda:
+                            CreamSodaButton.IsEnabled = false;
+                            break;
+                        case SodaFlavor.OrangeSoda:
+                            OrangeSodaButton.IsEnabled = false;
+                            break;
+                        case SodaFlavor.Sarsparilla:
+                            SarsparillaButton.IsEnabled = false;
+                            break;
+                        case SodaFlavor.BirchBeer:
+                            BirchBeerButton.IsEnabled = false;
+                            break;
+                        case SodaFlavor.RootBeer:
+                            RootBeerButton.IsEnabled = false;
+                            break;
+                    }
                     FlavorPanel.Visibility = Visibility.Visible;
                 }
             }
-            
+
+            if (DataContext is Drink d)
+            {
+                switch (d.Size)
+                {
+                    case CowboyCafe.Data.Size.Small:
+                        smallButton.IsEnabled = false;
+                        break;
+                    case CowboyCafe.Data.Size.Medium:
+                        mediumButton.IsEnabled = false;
+                        break;
+                    case CowboyCafe.Data.Size.Large:
+                        largeButton.IsEnabled = false;
+                        break;
+                }
+            }
+
         }
 
 
@@ -173,7 +207,7 @@ namespace PointOfSale
                 }
             }
         }
-        /*
+        
         /// <summary>
         /// Lets the flavor buttons act like radio buttons where the one selected will be unable to be pressed again.
         /// </summary>
@@ -196,7 +230,7 @@ namespace PointOfSale
                 }
             }
         }
-        */
+        
 
     }
 }
