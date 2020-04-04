@@ -77,8 +77,8 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnCompleteOrderButton(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
-            SwapScreen(new MenuItemSelectionControl());
+            var transactionScreen = new TransactionControl();
+            SwapScreen(transactionScreen);
         }
 
 

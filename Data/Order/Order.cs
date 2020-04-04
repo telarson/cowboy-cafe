@@ -20,6 +20,14 @@ namespace CowboyCafe.Data
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
+        /// Construcctor for Order that increments the lastOrderNumber;
+        /// </summary>
+        public Order()
+        {
+            lastOrderNumber++;
+        }
+
+        /// <summary>
         /// static uint to track the order number.
         /// </summary>
         static uint lastOrderNumber = 0;
@@ -57,7 +65,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Current order number
         /// </summary>
-        public uint OrderNumber { get { return ++lastOrderNumber; } }
+        public uint OrderNumber { get { return lastOrderNumber; } }
 
         /// <summary>
         /// Adds items to order
