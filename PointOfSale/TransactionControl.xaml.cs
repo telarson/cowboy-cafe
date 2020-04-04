@@ -31,6 +31,10 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// Method to create a string representing the receipt for the current order.
+        /// </summary>
+        /// <returns>A string with the order number, date/time, items ordered, subtotal, tax, and total, each on thier own line. </returns>
         public string CreateReceipt()
         {
             string receipt = "\n";
@@ -53,6 +57,11 @@ namespace PointOfSale
             return receipt;
         }
 
+        /// <summary>
+        /// Handles the click event for the Credit button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnCreditButtonClicked(object sender, RoutedEventArgs e)
         {
             var cardProcessor = new CardTerminal();
