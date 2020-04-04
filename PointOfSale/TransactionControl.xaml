@@ -19,6 +19,12 @@
         <Button Grid.Column="0" Grid.Row="0" Width="Auto" Height="Auto" Content="Credit" Name="CreditButton"/>
         <Button Grid.Column="1" Grid.Row="0" Width="Auto" Height="Auto" Content="Cash" Name="CashButton"/>
         <Button Grid.Column="2" Grid.Row="0" Width="Auto" Height="Auto" Content="Cancel Transaction" Name="CancelButton"/>
-        <Border Grid.Row="1" Grid.ColumnSpan="3" Name="PaymentBorder"/>
+        <Border x:Name="CreditPaymentBorder">
+            
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Name="CashPaymentBorder">
+            
+        </Border>
+        
     </Grid>
 </UserControl>
