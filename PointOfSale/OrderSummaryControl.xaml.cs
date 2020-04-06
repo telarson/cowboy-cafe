@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*OrderSummaryControl.xaml.cs
+ * Author: Tristan Larson
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;

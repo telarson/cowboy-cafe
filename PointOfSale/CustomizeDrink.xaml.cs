@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*CustomizaDrink.xaml.cs
+ * Author: Tristan Larson
+ * 
+ */
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
@@ -96,7 +100,10 @@ namespace PointOfSale
 
         }
 
-
+        /// <summary>
+        /// Generates checkboxes to toggle the boolean properties of the given drink.
+        /// </summary>
+        /// <param name="item"></param>
         void AddCheckBoxesForBooleanProperties(IOrderItem item)
         {
             List<CheckBox> Controls = new List<CheckBox>();
@@ -156,7 +163,11 @@ namespace PointOfSale
             }
         }
 
-
+        /// <summary>
+        /// Handles the flavor button clicks
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void OnFlavorButtonClick(object sender, RoutedEventArgs e)
         {
             if (DataContext is JerkedSoda soda)

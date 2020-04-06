@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*CashRegisterControl.xaml.cs
+ * Author: Tristan Larson
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -42,7 +45,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// 
+        /// Event to be thrown when the total cash given changes
         /// </summary>
         public event EventHandler TotalChanged;
 
@@ -52,13 +55,20 @@ namespace PointOfSale
             typeof(CashRegisterControl),
             new PropertyMetadata()
             );
-
+        /// <summary>
+        /// The cash given by the customer
+        /// </summary>
         public double CashGiven
         {
             get { return (double)GetValue(CashGivenProperty); }
             set { SetValue(CashGivenProperty, value); }
         }
 
+        /// <summary>
+        /// Event handler for when the amount of a bill or coin given changes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnAmountChanged(object sender, EventArgs e)
         {
             CashGiven = 0.00;
@@ -128,6 +138,11 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// Event handler for when the submit button for cash transactions
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnSubmitButtonClicked(object sender, EventArgs e)
         {
             TotalChanged?.Invoke(this, new EventArgs());           

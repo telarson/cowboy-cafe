@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*BillControl.xaml.cs
+ * Author: Tristan Larson
+ * Control for adding bills
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -27,7 +31,11 @@ namespace PointOfSale
 
         }
 
+        /// <summary>
+        /// Event for when the selected amount of a bill changes
+        /// </summary>
         public event EventHandler AmountChanged;
+
 
         public static readonly DependencyProperty AmountProperty = DependencyProperty.Register(
             "Amount",
@@ -35,12 +43,15 @@ namespace PointOfSale
             typeof(BillControl),
             new PropertyMetadata()
             );
-
+        /// <summary>
+        /// The amount of this type of bill given
+        /// </summary>
         public int Amount
         {
             get { return (int)GetValue(AmountProperty); }
             set { SetValue(AmountProperty, value); }
         }
+
 
         public static readonly DependencyProperty DenominationProperty = DependencyProperty.Register(
             "Denomination",
@@ -58,12 +69,22 @@ namespace PointOfSale
             set { SetValue(DenominationProperty, value); }
         }
 
+        /// <summary>
+        /// Handles a click event for the DecrementButton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnDecrementClicked(object sender, RoutedEventArgs e)
         {
             Amount--;
             AmountChanged?.Invoke(this, new EventArgs());
         }
 
+        /// <summary>
+        /// Handles a click event for IncrementBUtton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnIncrementClicked(object sender, RoutedEventArgs e)
         {
             Amount++;

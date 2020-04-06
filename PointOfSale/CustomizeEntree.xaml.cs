@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* CustomizeEntree.xaml.cs
+ * Author: Tristan Larson
+ */
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;

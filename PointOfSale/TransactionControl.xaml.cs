@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* TransactionControl.xaml.cs
+ * Author: Tristan Larson
+ */
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -171,6 +174,7 @@ namespace PointOfSale
         {
             string ChangeReport = "Give this change:\n";
 
+            //TODO: THIS IS BAD AND SHOULD BE REFACTORED
             if(changeNeeded >= 100.00 && OrderControl.CashDrawer.Hundreds > 0)
             {
                 int BillsNeeded = 0;
