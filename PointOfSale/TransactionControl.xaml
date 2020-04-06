@@ -9,6 +9,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -19,12 +20,12 @@
         <Button Grid.Column="0" Grid.Row="0" Width="Auto" Height="Auto" Content="Credit" Name="CreditButton"/>
         <Button Grid.Column="1" Grid.Row="0" Width="Auto" Height="Auto" Content="Cash" Name="CashButton"/>
         <Button Grid.Column="2" Grid.Row="0" Width="Auto" Height="Auto" Content="Cancel Transaction" Name="CancelButton"/>
-        <Border x:Name="CreditPaymentBorder">
-            
+        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Name="CashPaymentBorder" IsEnabled="False">
+            <local:CashRegisterControl x:Name="CashControl"/>
         </Border>
-        <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Name="CashPaymentBorder">
-            
-        </Border>
-        
+        <StackPanel Grid.Row="1" Grid.Column="2" >
+            <TextBlock x:Name="TaxText" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:TransactionControl}}, Path=Tax, StringFormat=Tax: {0:C}}" HorizontalAlignment="Right" FontSize="15"/>
+            <TextBlock x:Name="TotalText" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:TransactionControl}}, Path=Total, StringFormat=Total: {0:C}}" HorizontalAlignment="Right" FontSize="15"/>
+        </StackPanel>
     </Grid>
 </UserControl>

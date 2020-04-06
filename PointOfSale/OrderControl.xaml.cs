@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CashRegister;
 
 namespace PointOfSale
 {
@@ -39,6 +40,8 @@ namespace PointOfSale
             
             
         }
+
+        public static CashDrawer CashDrawer = new CashDrawer();
 
         /// <summary>
         /// Swaps the content shown in Container with the given UIElement
