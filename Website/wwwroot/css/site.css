@@ -75,3 +75,7 @@ body {
     margin: auto;
     width: 50%;
 }
+
+.item-price, .item-calories{
+    text-indent: 50px;
+}
