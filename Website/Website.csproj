@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\CowboyCafe-images\BuckingBronco.png" />
+    <None Include="wwwroot\CowboyCafe-images\Chuckwagon_in_Girvin,_TX_SCN1077.jfif" />
+    <None Include="wwwroot\CowboyCafe-images\Chuckwagon_Texas_1900.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
   </ItemGroup>
 
