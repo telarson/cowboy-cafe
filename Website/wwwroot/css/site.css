@@ -43,7 +43,7 @@ html {
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy {
@@ -59,9 +59,10 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
 }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -70,12 +71,40 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-.center {
-    display: block;
-    margin: auto;
-    width: 50%;
+
+.item-price, .item-calories {
+    display:grid;
+    text-align: right;
 }
 
-.item-price, .item-calories{
-    text-indent: 50px;
+.item-type{
+    border-bottom: 1px solid #e5e5e5;
 }
+
+.bg-image {
+    margin: auto;
+    background-image: url(../CowboyCafe-images/Chuckwagon_Texas_1900.jpg);
+    height: 650px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+
+.blurb{
+    text-align:center;
+    font-style:oblique;
+    font-variant:small-caps;
+}
+
+.varieties {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 50px;
+    list-style-type: none;
+    border-bottom: 1px solid lightgray;
+    margin: 10px;
+}
+

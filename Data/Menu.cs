@@ -59,9 +59,9 @@ namespace CowboyCafe.Data
             IEnumerable<IOrderItem> drinkEnumerable = new Drink[]
             {
                 new CowboyCoffee(),
-                new JerkedSoda(),
                 new TexasTea(),
-                new Water()
+                new Water(),
+                new JerkedSoda()
             };
 
             return drinkEnumerable;

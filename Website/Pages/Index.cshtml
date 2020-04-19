@@ -8,85 +8,120 @@
 }
 
 
-<h1 class="text-center">Cowboy Cafe</h1>
-<h1>
-    We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
-    Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
-    Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger!
-    You’ve had a hard ride - so take it easy with us.
-</h1>
+    
+        <h1 class="blurb">Cowboy Cafe</h1>
 
-<h2>Entrees</h2>
-@foreach (CowboyCafe.Data.Entree e in Entrees)
-{
-    <div class="menu-item">
-        <div class="item-name">@e.ToString()</div>
-        <div class="item-calories">
-            Calories: @e.Calories
+        <h1 class="blurb">
+            We at Cowboy Cafe are proud to bring you authentic trail meals from the American West.
+            Shake off the dust on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas.
+            Dip your Pan de Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger!
+            You’ve had a hard ride - so take it easy with us.
+        </h1>
+        <div class="bg-image">
         </div>
-        <div class="item-price">
-            $@e.Price
-        </div>
-    </div>
-}
-<h2>Sides</h2>
-@foreach (CowboyCafe.Data.Side e in Sides)
-{
-    <li>
-        <div class="menu-item">
-            <div class="item-name">@e.ToString()</div>
-            <div class="item-calories">
-                Calories: @e.Calories
-            </div>
-            <div class="item-price">
-                $@e.Price
-            </div>
+        <h2 class="item-type">Entrees</h2>
+        <div class="varieties">
+            @foreach (CowboyCafe.Data.Entree e in Entrees)
+            {
+
+                <div class="menu-item">
+                    <div class="item-name">@e.ToString()</div>
+                    <div class="item-calories">
+                        Calories: @e.Calories
+                    </div>
+                    <div class="item-price">
+                        @string.Format("{0:C}", e.Price)
+                    </div>
+                </div>
+            }
         </div>
 
-
-        @{e.Size = CowboyCafe.Data.Size.Medium;}
-        <div class="menu-item">
-            <div class="item-name">@e.ToString()</div>
-            <div class="item-calories">
-                Calories: @e.Calories
-            </div>
-            <div class="item-price">
-                $@e.Price
-            </div>
-        </div>
-
-        @{e.Size = CowboyCafe.Data.Size.Large;}
-        <div class="menu-item">
-            <div class="item-name">@e.ToString()</div>
-            <div class="item-calories">
-                Calories: @e.Calories
-            </div>
-            <div class="item-price">
-                $@e.Price
-            </div>
-        </div>
-    </li>
-}
-
-<h2>Drinks</h2>
-@foreach (CowboyCafe.Data.Drink e in Drinks)
-{
-    <div class="menu-item">
-        <div class="item-name">@e.ToString()</div>
-        <div class="item-calories">
-            Calories: @e.Calories
-        </div>
-        <div class="item-price">
-            $@e.Price
-        </div>
-    </div>
-    @if (e is CowboyCafe.Data.JerkedSoda)
-    {
-        <p2>Flavors</p2>
-        @foreach (CowboyCafe.Data.SodaFlavor flavor in Enum.GetValues(typeof(CowboyCafe.Data.SodaFlavor)))
+        <h2 class="item-type">Sides</h2>
+        @foreach (CowboyCafe.Data.Side e in Sides)
         {
-            <p3>@flavor.ToString();</p3>
+            <div class="varieties">
+                <div class="menu-item">
+                    <div class="item-name">@e.ToString()</div>
+                    <div class="item-calories">
+                        Calories: @e.Calories
+                    </div>
+                    <div class="item-price">
+                        @string.Format("{0:C}", e.Price)
+                    </div>
+                </div>
+
+
+                @{e.Size = CowboyCafe.Data.Size.Medium;}
+                <div class="menu-item">
+                    <div class="item-name">@e.ToString()</div>
+                    <div class="item-calories">
+                        Calories: @e.Calories
+                    </div>
+                    <div class="item-price">
+                        @string.Format("{0:C}", e.Price)
+                    </div>
+                </div>
+
+                @{e.Size = CowboyCafe.Data.Size.Large;}
+                <div class="menu-item">
+                    <div class="item-name">@e.ToString()</div>
+                    <div class="item-calories">
+                        Calories: @e.Calories
+                    </div>
+                    <div class="item-price">
+                        @string.Format("{0:C}", e.Price)
+                    </div>
+                </div>
+            </div>
         }
-    }
-}
+
+        <h2 class="item-type">Drinks</h2>
+        @foreach (CowboyCafe.Data.Drink e in Drinks)
+        {
+            <div class="varieties">
+                <div class="menu-item">
+                    <div class="item-name">@e.ToString()</div>
+                    <div class="item-calories">
+                        Calories: @e.Calories
+                    </div>
+                    <div class="item-price">
+                        @string.Format("{0:C}", e.Price)
+                    </div>
+                </div>
+
+
+                @{e.Size = CowboyCafe.Data.Size.Medium;}
+                <div class="menu-item">
+                    <div class="item-name">@e.ToString()</div>
+                    <div class="item-calories">
+                        Calories: @e.Calories
+                    </div>
+                    <div class="item-price">
+                        @string.Format("{0:C}", e.Price)
+                    </div>
+                </div>
+
+                @{e.Size = CowboyCafe.Data.Size.Large;}
+                <div class="menu-item">
+                    <div class="item-name">@e.ToString()</div>
+                    <div class="item-calories">
+                        Calories: @e.Calories
+                    </div>
+                    <div class="item-price">
+                        @string.Format("{0:C}", e.Price)
+                    </div>
+                </div>
+            </div>
+            @if (e is CowboyCafe.Data.JerkedSoda)
+            {
+                <p2>Soda Flavors</p2>
+                @foreach (CowboyCafe.Data.SodaFlavor flavor in Enum.GetValues(typeof(CowboyCafe.Data.SodaFlavor)))
+                {
+                    <ul>
+                        <p3>@flavor.ToString()</p3>
+                    </ul>
+                }
+            }
+        }
+    
 

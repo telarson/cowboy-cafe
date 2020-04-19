@@ -108,6 +108,9 @@ namespace CowboyCafe.Data
                 case SodaFlavor.Sarsparilla:
                     item = $"{Size} Sarsparilla Jerked Soda";
                     break;
+                default:
+                    item = $"{Size} Jerked Soda";
+                    break;
             }
             return item;
         }
