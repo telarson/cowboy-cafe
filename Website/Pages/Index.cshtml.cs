@@ -26,7 +26,7 @@ namespace Website.Pages
         [BindProperty(SupportsGet = true)]
         public string SearchTerms { get; set; } = "";
 
-        public readonly string[] CategoriesList = { "Entree", "Side", "Drink" };
+        public string[] CategoriesList { get { return new string[] { "Entree", "Side", "Drink" }; } }
 
         [BindProperty(SupportsGet = true)]
         public string[] Categories { get; set; }
@@ -43,11 +43,22 @@ namespace Website.Pages
         [BindProperty(SupportsGet = true)]
         public double? PriceMax { get; set; }
 
-        public void OnGet()
+        public void OnGet(uint? CaloriesMin, uint? CaloriesMax, double? PriceMin, double? PriceMax)
         {
+            this.PriceMax = PriceMax;
+            this.PriceMin = PriceMin;
+            this.CaloriesMin = CaloriesMin;
+            this.CaloriesMax = CaloriesMax;
+
             Entrees = Menu.Search(Entrees, SearchTerms);
             Drinks = Menu.Search(Drinks, SearchTerms);
             Sides = Menu.Search(Sides, SearchTerms);
+
+            Entrees = Menu.FilterByCategory(Entrees, Categories);
+            Drinks = Menu.FilterByCategory(Drinks, Categories);
+            Sides = Menu.FilterByCategory(Sides, Categories);
+
+
         }
     }
 }

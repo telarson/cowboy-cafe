@@ -28,7 +28,7 @@
             @foreach (String category in Model.CategoriesList)
             {
                 <label>
-                    <input type="checkbox" name="Categorys" value="@category" checked="@Model.Categories.Contains(category)" />
+                    <input type="checkbox" name="Categories" value="@category" checked="@Model.Categories.Contains(category)" />
                     @category
                 </label>
             }
