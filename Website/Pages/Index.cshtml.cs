@@ -23,23 +23,31 @@ namespace Website.Pages
         public IEnumerable<IOrderItem> Drinks { get; set; } = CowboyCafe.Data.Menu.Drinks();
         public IEnumerable<IOrderItem> Sides { get; set; } = CowboyCafe.Data.Menu.Sides();
 
+        [BindProperty(SupportsGet = true)]
         public string SearchTerms { get; set; } = "";
 
         public readonly string[] CategoriesList = { "Entree", "Side", "Drink" };
 
-        public string[] Categories { get; set; } = { };
+        [BindProperty(SupportsGet = true)]
+        public string[] Categories { get; set; }
 
+        [BindProperty(SupportsGet = true)]
         public uint? CaloriesMin { get; set; }
 
+        [BindProperty(SupportsGet = true)]
         public uint? CaloriesMax { get; set; }
 
+        [BindProperty(SupportsGet = true)]
         public double? PriceMin { get; set; }
 
+        [BindProperty(SupportsGet = true)]
         public double? PriceMax { get; set; }
 
         public void OnGet()
         {
-
+            Entrees = Menu.Search(Entrees, SearchTerms);
+            Drinks = Menu.Search(Drinks, SearchTerms);
+            Sides = Menu.Search(Sides, SearchTerms);
         }
     }
 }

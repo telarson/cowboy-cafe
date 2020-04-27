@@ -95,6 +95,21 @@ namespace CowboyCafe.Data
             return menuEnumerable;
         }
 
+        public static IEnumerable<IOrderItem> Search(IEnumerable<IOrderItem> orderItemsIn, string searchTerm)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
 
+            if (searchTerm == null) { return orderItemsIn; }
+
+            foreach(IOrderItem item in orderItemsIn)
+            {
+                if(item.ToString().Contains(searchTerm, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    results.Add(item);
+                }
+            }
+
+            return results;
+        }
     }
 }
