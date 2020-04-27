@@ -24,7 +24,8 @@ namespace CowboyCafe.Data
         /// </summary>
         public Order()
         {
-            lastOrderNumber++;
+            lastOrderNumber += 1 ;
+            OrderNumber = lastOrderNumber;
         }
 
         /// <summary>
@@ -62,10 +63,11 @@ namespace CowboyCafe.Data
             }
         }
 
+        private uint orderNumber;
         /// <summary>
         /// Current order number
         /// </summary>
-        public uint OrderNumber { get { return lastOrderNumber; } }
+        public uint OrderNumber { get { return orderNumber; }  set { orderNumber = value; } }
 
         /// <summary>
         /// Adds items to order

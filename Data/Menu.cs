@@ -20,7 +20,7 @@ namespace CowboyCafe.Data
         /// <returns>An IEnumerable containing an instance of each entree class</returns>
         public static IEnumerable<IOrderItem> Entrees()
         {
-            IEnumerable<IOrderItem> entreeEnumerable = new Entree[]
+            IEnumerable<IOrderItem> entreeEnumerable = new List<IOrderItem>
             {
                 new AngryChicken(),
                 new CowpokeChili(),
