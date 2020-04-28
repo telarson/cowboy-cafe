@@ -209,7 +209,7 @@ namespace CowboyCafe.Data
         /// <param name="min">The minimum calories</param>
         /// <param name="max">The maximum calories</param>
         /// <returns>A filtered IEnumerable<IOrderItem> based on the given calorie range</returns>
-        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> orderItemsIn, double? max, double? min)
+        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> orderItemsIn, double? min, double? max)
         {
             List<IOrderItem> results = new List<IOrderItem>();
 
