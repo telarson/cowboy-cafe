@@ -32,10 +32,10 @@ namespace Website.Pages
         public string[] Categories { get; set; }
 
         [BindProperty(SupportsGet = true)]
-        public uint? CaloriesMin { get; set; }
+        public int? CaloriesMin { get; set; }
 
         [BindProperty(SupportsGet = true)]
-        public uint? CaloriesMax { get; set; }
+        public int? CaloriesMax { get; set; }
 
         [BindProperty(SupportsGet = true)]
         public double? PriceMin { get; set; }
@@ -43,7 +43,7 @@ namespace Website.Pages
         [BindProperty(SupportsGet = true)]
         public double? PriceMax { get; set; }
 
-        public void OnGet(uint? CaloriesMin, uint? CaloriesMax, double? PriceMin, double? PriceMax)
+        public void OnGet(int? CaloriesMin, int? CaloriesMax, double? PriceMin, double? PriceMax)
         {
             this.PriceMax = PriceMax;
             this.PriceMin = PriceMin;
@@ -57,6 +57,14 @@ namespace Website.Pages
             Entrees = Menu.FilterByCategory(Entrees, Categories);
             Drinks = Menu.FilterByCategory(Drinks, Categories);
             Sides = Menu.FilterByCategory(Sides, Categories);
+
+            Entrees = Menu.FilterByCalories(Entrees, this.CaloriesMin, this.CaloriesMax);
+            Drinks = Menu.FilterByCalories(Drinks, this.CaloriesMin, this.CaloriesMax);
+            Sides = Menu.FilterByCalories(Sides, this.CaloriesMin, this.CaloriesMax);
+
+            Entrees = Menu.FilterByPrice(Entrees, this.PriceMin, this.PriceMax);
+            Drinks = Menu.FilterByPrice(Drinks, this.PriceMin, this.PriceMax);
+            Sides = Menu.FilterByPrice(Sides, this.PriceMin, this.PriceMax);
 
 
         }

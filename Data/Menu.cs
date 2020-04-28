@@ -5,6 +5,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -104,11 +105,12 @@ namespace CowboyCafe.Data
         /// <returns>A collection of IOrderItems whos ToStrings contain the search terms.</returns>
         public static IEnumerable<IOrderItem> Search(IEnumerable<IOrderItem> orderItemsIn, string searchTerm)
         {
-            List<IOrderItem> results = new List<IOrderItem>();
 
             if (searchTerm == null) { return orderItemsIn; }
 
-            foreach(IOrderItem item in orderItemsIn)
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            foreach (IOrderItem item in orderItemsIn)
             {
                 if(item.ToString().Contains(searchTerm, StringComparison.InvariantCultureIgnoreCase))
                 {
@@ -119,11 +121,18 @@ namespace CowboyCafe.Data
             return results;
         }
 
+        /// <summary>
+        /// Filters the given IEnumerable<IOrderItem> based on the string present in the given IEnumerable<string>
+        /// </summary>
+        /// <param name="orderItemsIn">The IOrderItems to be filtered</param>
+        /// <param name="categories">The IEnumerable<string> containing the strings to filter by.</param>
+        /// <returns>IEnumerable<IOrderItem> of the filtered items</returns>
         public static IEnumerable<IOrderItem> FilterByCategory(IEnumerable<IOrderItem> orderItemsIn, IEnumerable<string> categories)
         {
-            List<IOrderItem> results = new List<IOrderItem>();
+            
+            if (categories == null || categories.Count() == 0) { return orderItemsIn; }
 
-            if (categories.Count() == 0) { return orderItemsIn; }
+            List<IOrderItem> results = new List<IOrderItem>();
 
             foreach (IOrderItem item in orderItemsIn)
             {
@@ -143,5 +152,105 @@ namespace CowboyCafe.Data
 
             return results;
         }
+
+        /// <summary>
+        /// Filters the given IEnumerable<IOrderItem> items based on the range given for calories
+        /// </summary>
+        /// <param name="orderItemsIn">The items to filter</param>
+        /// <param name="min">The minimum calories</param>
+        /// <param name="max">The maximum calories</param>
+        /// <returns>A filtered IEnumerable<IOrderItem> based on the given calorie range</returns>
+        public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> orderItemsIn, int? min, int? max)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            if (min == null && max == null) { return orderItemsIn; }
+
+            if(min != null && max == null)
+            {
+                foreach(IOrderItem item in orderItemsIn)
+                {
+                    if (item.Calories >= min)
+                    {
+                        results.Add(item);
+                    }
+                }
+            }
+
+            if (min == null && max != null)
+            {
+                foreach (IOrderItem item in orderItemsIn)
+                {
+                    if (item.Calories <= max)
+                    {
+                        results.Add(item);
+                    }
+                }
+            }
+
+            if (min != null && max != null)
+            {
+                foreach (IOrderItem item in orderItemsIn)
+                {
+                    if (item.Calories >= min && item.Calories <= max)
+                    {
+                        results.Add(item);
+                    }
+                }
+            }
+
+            return results;
+        }
+
+        /// <summary>
+        /// Filters the given IEnumerable<IOrderItem> items based on the range given for price
+        /// </summary>
+        /// <param name="orderItemsIn">The items to filter</param>
+        /// <param name="min">The minimum calories</param>
+        /// <param name="max">The maximum calories</param>
+        /// <returns>A filtered IEnumerable<IOrderItem> based on the given calorie range</returns>
+        public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> orderItemsIn, double? max, double? min)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+
+            if (min == null && max == null) { return orderItemsIn; }
+
+            if (min != null && max == null)
+            {
+                foreach (IOrderItem item in orderItemsIn)
+                {
+                    if (item.Price >= min)
+                    {
+                        results.Add(item);
+                    }
+                }
+            }
+
+            if (min == null && max != null)
+            {
+                foreach (IOrderItem item in orderItemsIn)
+                {
+                    if (item.Price <= max)
+                    {
+                        results.Add(item);
+                    }
+                }
+            }
+
+            if (min != null && max != null)
+            {
+                foreach (IOrderItem item in orderItemsIn)
+                {
+                    if (item.Price >= min && item.Price <= max)
+                    {
+                        results.Add(item);
+                    }
+                }
+            }
+
+            return results;
+        }
+
+
     }
 }
