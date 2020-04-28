@@ -17,11 +17,6 @@
         <div class="bg-image">
         </div>
 
-        <div id="search">
-            <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
-            <input type="submit" value="Search">
-        </div>
-
         <div id="filters">
             <h4>Category</h4>
             @foreach (String category in Model.CategoriesList)
@@ -47,6 +42,11 @@
                 and
                 <input name="PriceMax" type="number" min="0" max="10000" step="0.01" placeholder="max" value="@Model.PriceMax " />
             </div>
+        </div>
+
+        <div id="search">
+            <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+            <input type="submit" value="Search">
         </div>
 
         <h2 class="item-type">Entrees</h2>

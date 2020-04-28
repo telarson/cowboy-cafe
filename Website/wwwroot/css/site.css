@@ -108,3 +108,23 @@ body {
     margin: 10px;
 }
 
+
+#search {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#filters {
+    display: flex;
+    flex-direction: column;
+}
+
+    #filters input[type=number] {
+        width: 10rem;
+    }
+
+    #filters h4 {
+        margin-bottom: 0.2rem;
+    }
